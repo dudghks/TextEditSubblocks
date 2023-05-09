@@ -1,4 +1,5 @@
 #include "codesubblock.h"
+#include "codesubblocksettings.h"
 
 CodeSubblock::CodeSubblock(QTextFrame* _frame)
 {
@@ -25,6 +26,11 @@ void CodeSubblock::setSettingsButton(QToolButton* _settingsButton) {
 
 QToolButton* CodeSubblock::settingsButton() const {
     return m_settingsButton;
+}
+
+void CodeSubblock::openSettingsMenu() {
+    CodeSubblockSettings settings;
+    settings.exec();
 }
 
 QTextFrameFormat CodeSubblock::format() const {

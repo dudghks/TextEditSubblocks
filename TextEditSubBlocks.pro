@@ -11,12 +11,14 @@ CONFIG += c++17
 SOURCES += \
     blocktextedit.cpp \
     codesubblock.cpp \
+    codesubblocksettings.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     blocktextedit.h \
     codesubblock.h \
+    codesubblocksettings.h \
     mainwindow.h
 
 FORMS += \

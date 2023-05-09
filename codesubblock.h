@@ -5,9 +5,13 @@
 #include <QTextFrame>
 #include <QTextFrameFormat>
 
+namespace Ui {
+    class CodeSubblockSettings;
+}
 
 class CodeSubblock
 {
+
 public:
     CodeSubblock(QTextFrame* _frame);
     void setFrame(QTextFrame* _frame);
@@ -15,6 +19,7 @@ public:
     void setSettingsButton(QToolButton* _settingsButton);
     QToolButton* settingsButton() const;
     QTextFrameFormat format() const;
+    void openSettingsMenu();
 
 private:
     QTextFrame* m_frame;

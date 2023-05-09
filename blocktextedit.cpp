@@ -13,6 +13,7 @@
 #include <QTextFrame>
 #include <QToolButton>
 #include <QLayout>
+#include <QPushButton>
 
 BlockTextEdit::BlockTextEdit(QWidget *parent) : QTextEdit(parent),
     m_document()
@@ -271,8 +272,6 @@ void BlockTextEdit::insertCodeBlock(QWidget* _centralwidget) {
     // Make subblock button visible
     _centralwidget->layout()->addWidget(newCodeBlock.settingsButton());
     newCodeBlock.settingsButton()->setParent(this);
-    _centralwidget->layout()->addWidget(newCodeBlock.deleteButton());
-    newCodeBlock.deleteButton()->setParent(this);
 
     // Set initial button positions
 
@@ -322,4 +321,6 @@ void BlockTextEdit::insertCodeBlock(QWidget* _centralwidget) {
             newCodeBlock.settingsButton()->setVisible(false);
         }
     });
+
+    connect(newCodeBlock.settingsButton(), &QPushButton::clicked, this, [newCodeBlock]() mutable {newCodeBlock.openSettingsMenu();});
 }
