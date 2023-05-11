@@ -29,10 +29,11 @@ QToolButton* CodeSubblock::settingsButton() const {
 }
 
 void CodeSubblock::openSettingsMenu() {
-    CodeSubblockSettings settings;
+    CodeSubblockSettings settings(this);
     settings.exec();
 }
 
 QTextFrameFormat CodeSubblock::format() const {
     return m_format;
 }
+

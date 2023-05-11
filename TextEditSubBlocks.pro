@@ -22,7 +22,6 @@ HEADERS += \
     mainwindow.h
 
 FORMS += \
-    codesubblocksettings.ui \
     mainwindow.ui
 
 # Default rules for deployment.
